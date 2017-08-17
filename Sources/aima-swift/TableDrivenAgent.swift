@@ -4,9 +4,8 @@
  Table-Driven agent
  */
 
-public typealias LookupTable = ([Percept]) -> Action
-
 public class TableDrivenAgent: Agent {
+    public typealias LookupTable = ([Percept]) -> Action
     fileprivate var percepts = [Percept]()
     fileprivate let lookupTable: LookupTable
     

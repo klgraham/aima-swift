@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		FD9D7E9A1F46223700BEF5C2 /* aimaSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7E991F46223700BEF5C2 /* aimaSwiftTests.swift */; };
+		FD9D7E9A1F46223700BEF5C2 /* AgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7E991F46223700BEF5C2 /* AgentTests.swift */; };
 		OBJ_26 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_34 /* aimaSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "aimaSwift::aimaSwift::Product" /* aimaSwift.framework */; };
 		OBJ_41 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Agent.swift */; };
@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FD9D7E991F46223700BEF5C2 /* aimaSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aimaSwiftTests.swift; sourceTree = "<group>"; };
+		FD9D7E991F46223700BEF5C2 /* AgentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentTests.swift; sourceTree = "<group>"; };
 		OBJ_10 /* ModelBasedReflexAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBasedReflexAgent.swift; sourceTree = "<group>"; };
 		OBJ_11 /* ReflexVacuumAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexVacuumAgent.swift; sourceTree = "<group>"; };
 		OBJ_12 /* SimpleReflexAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleReflexAgent.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		OBJ_16 /* aimaSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				FD9D7E991F46223700BEF5C2 /* aimaSwiftTests.swift */,
+				FD9D7E991F46223700BEF5C2 /* AgentTests.swift */,
 			);
 			name = aimaSwiftTests;
 			path = Tests/aimaSwiftTests;
@@ -230,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				FD9D7E9A1F46223700BEF5C2 /* aimaSwiftTests.swift in Sources */,
+				FD9D7E9A1F46223700BEF5C2 /* AgentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,9 +23,38 @@ class AgentTests: XCTestCase {
         XCTAssertEqual(actions, expectedActions)
     }
     
+    fileprivate func percept(_ location: Location, _ status: Status) -> VacuumEnvironmentState {
+        return VacuumEnvironmentState(location: location, status: status)
+    }
+    
+    // Uses the vacuum cleaner world example from Section 2.1, Figure 2.3 as a test
     func testTableDrivenVacuumAgent() {
-        let output = tableDrivenVacuumAgent.run(given: VacuumEnvironmentState(location: .a, status: .dirty)) as! VacuumAction
-        XCTAssertEqual(output, .suck)
+        let perceptHistories: [[VacuumEnvironmentState]] = [
+            [percept(.a, .clean)],
+            [percept(.a, .dirty)],
+            [percept(.b, .clean)],
+            [percept(.b, .dirty)],
+            [percept(.a, .clean), percept(.a, .clean)],
+            [percept(.a, .clean), percept(.a, .dirty)],
+            [percept(.a, .clean), percept(.a, .clean), percept(.a, .clean)],
+            [percept(.a, .clean), percept(.a, .clean), percept(.a, .dirty)]
+        ]
+        
+        let expectedActions: [VacuumAction] =
+            [.turnRight, .suck, .turnLeft, .suck, .turnRight, .suck, .turnRight, .suck]
+        
+        var returnedActions = [VacuumAction]()
+        
+        for history in perceptHistories {
+            var action: VacuumAction!
+            for percept in history {
+                action = tableDrivenVacuumAgent.run(given: percept) as! VacuumAction
+            }
+            returnedActions.append(action)
+        }
+        
+        
+        XCTAssertEqual(returnedActions, expectedActions)
     }
     
     static var allTests = [

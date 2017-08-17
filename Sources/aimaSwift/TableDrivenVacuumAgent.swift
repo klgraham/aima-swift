@@ -8,5 +8,4 @@ let lookupTable: LookupTable = { (perceptHistory: [Percept]) in
     return vacuumRuleMatcher(perceptHistory[perceptHistory.count - 1] as! VacuumEnvironmentState)
 }
 
-
 let tableDrivenVacuumAgent = TableDrivenAgent(lookupTable: lookupTable)

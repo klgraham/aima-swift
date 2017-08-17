@@ -1,8 +1,26 @@
+//
+//  aimaTests.swift
+//  aimaSwiftTests
+//
+//  Created by Kenneth Graham on 8/17/17.
+//
+
 import XCTest
 @testable import aimaSwift
 
 class aimaSwiftTests: XCTestCase {
-    func simpleReflexAgentTests() {
+    
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testExample() {
         let states = [
             VacuumEnvironmentState(location: .a, status: .dirty),
             VacuumEnvironmentState(location: .b, status: .dirty),
@@ -15,21 +33,27 @@ class aimaSwiftTests: XCTestCase {
         XCTAssertEqual(actions, expectedActions)
     }
     
-//    func modelBasedAgentTest() {
-//        
+    //    func modelBasedAgentTest() {
+    //
+    //    }
+    
+//    func tableDrivenVacuumAgentTest() {
+//
+//        let output = tableDrivenVacuumAgent.run(given: VacuumEnvironmentState(location: .a, status: .dirty)) as! VacuumAction
+//        XCTAssertEqual(output, .suck)
 //    }
     
-    func tableDrivenVacuumAgentTest() {
-        
-        let output = tableDrivenVacuumAgent.run(given: VacuumEnvironmentState(location: .a, status: .dirty)) as! VacuumAction
-        XCTAssertEqual(1, 1)
-        XCTAssertEqual(output, .suck)
-    }
-
-
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
+    
     static var allTests = [
-        ("simpleReflexAgentTests", simpleReflexAgentTests),
-        ("tableDrivenVacuumAgentTest", tableDrivenVacuumAgentTest)
-//        ("modelBasedAgentTest", modelBasedAgentTest)
+        ("testExample", testExample),
+//        ("tableDrivenVacuumAgentTest", tableDrivenVacuumAgentTest)
+        //        ("modelBasedAgentTest", modelBasedAgentTest)
     ]
+    
 }

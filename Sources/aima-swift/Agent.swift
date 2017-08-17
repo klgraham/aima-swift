@@ -16,8 +16,12 @@ public typealias Sensor = (Environment) -> Percept
 
 public protocol Agent {
     // The agent program specifies how an agent interacts with an Environment
-    func run(given precept: Percept) -> Action
+    func run(given precept: Percept) -> Action?
     
     // The agent can act on the environment with an Actuator
     func act(on environment: Environment, with action: Action) -> Environment
+}
+
+extension Agent {
+    public func act(on environment: Environment, with action: Action) -> Environment { return environment }
 }

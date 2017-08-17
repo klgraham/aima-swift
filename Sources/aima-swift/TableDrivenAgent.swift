@@ -14,14 +14,12 @@ public class TableDrivenAgent: Agent {
         self.lookupTable = lookupTable
     }
     
-    public func run(given percept: Percept) -> Action {
+    public func run(given percept: Percept) -> Action? {
         percepts.append(percept)
         return lookup(percepts)
     }
     
     fileprivate func lookup(_ percepts: [Percept]) -> Action {
         return lookupTable(percepts)
-    }
-    
-    public func act(on environment: Environment, with action: Action) -> Environment { return environment }
+    }    
 }

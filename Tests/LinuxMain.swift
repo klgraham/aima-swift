@@ -1,6 +1,6 @@
 import XCTest
-@testable import aima_swiftTests
+@testable import AgentTests
 
 XCTMain([
-    testCase(aima_swiftTests.allTests),
+    testCase(AgentTests.allTests),
 ])

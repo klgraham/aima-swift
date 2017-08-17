@@ -6,21 +6,22 @@
 
 public typealias LookupTable = ([Percept]) -> Action
 
-public protocol TableDrivenAgent: Agent {
-    var percepts: [Percept] { get set }
-    var lookupTable: LookupTable { get }
-    func runAgent(given percept: Percept) -> Action
+public class TableDrivenAgent: Agent {
+    fileprivate var percepts = [Percept]()
+    fileprivate let lookupTable: LookupTable
     
-    func lookup(_ percepts: [Percept]) -> Action
-}
-
-extension TableDrivenAgent {
-    mutating func runAgent(given percept: Percept) -> Action {
+    public init(lookupTable: @escaping LookupTable) {
+        self.lookupTable = lookupTable
+    }
+    
+    public func run(given percept: Percept) -> Action {
         percepts.append(percept)
         return lookup(percepts)
     }
     
-    func lookup(_ percepts: [Percept]) -> Action {
+    fileprivate func lookup(_ percepts: [Percept]) -> Action {
         return lookupTable(percepts)
     }
+    
+    public func act(on environment: Environment, with action: Action) -> Environment { return environment }
 }

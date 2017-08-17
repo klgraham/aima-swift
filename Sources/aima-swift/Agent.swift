@@ -15,12 +15,9 @@ public typealias Actuator = (Action, Environment) -> Environment
 public typealias Sensor = (Environment) -> Percept
 
 public protocol Agent {
-    // Actuators let agents act on an environment
-    var actuators: [Actuator] { get set }
-    
-    // Sensors let agents perceive an environment
-    var sensors: [Sensor] { get set }
-    
     // The agent program specifies how an agent interacts with an Environment
-    func run(in environment: Environment) -> Environment
+    func run(given precept: Percept) -> Action
+    
+    // The agent can act on the environment with an Actuator
+    func act(on environment: Environment, with action: Action) -> Environment
 }

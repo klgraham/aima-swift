@@ -32,7 +32,7 @@ extension VacuumEnvironmentState: Hashable {
 
 public let interpreter: (Percept) -> VacuumEnvironmentState = { p in return p as! VacuumEnvironmentState }
 
-public let ruleMatcher: (VacuumEnvironmentState) -> VacuumAction = { envState in
+public let vacuumRuleMatcher: (VacuumEnvironmentState) -> VacuumAction = { envState in
     switch (envState.location, envState.status) {
     case (_, .dirty): return .suck
     case (.a, .clean): return .turnRight
@@ -41,4 +41,4 @@ public let ruleMatcher: (VacuumEnvironmentState) -> VacuumAction = { envState in
 }
 
 public typealias ReflexVacuumAgent = SimpleReflexAgent<VacuumEnvironmentState>
-public let vacuumAgent = ReflexVacuumAgent(interpreter: interpreter, ruleMatch: ruleMatcher)
+public let vacuumAgent = ReflexVacuumAgent(interpreter: interpreter, ruleMatch: vacuumRuleMatcher)

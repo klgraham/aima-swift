@@ -8,7 +8,7 @@ public class SimpleReflexAgent<State: Hashable>: Agent {
     fileprivate var ruleMatch: (State) -> Action
     fileprivate var interpret: (Percept) -> State
     
-    init(interpreter: @escaping (Percept) -> State, ruleMatch: @escaping (State) -> Action) {
+    public init(interpreter: @escaping (Percept) -> State, ruleMatch: @escaping (State) -> Action) {
         self.interpret = interpreter
         self.ruleMatch = ruleMatch
     }

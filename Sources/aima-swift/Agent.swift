@@ -22,5 +22,5 @@ public protocol Agent {
     var sensors: [Sensor] { get set }
     
     // The agent program specifies how an agent interacts with an Environment
-    func run() -> Environment
+    func run(in environment: Environment) -> Environment
 }

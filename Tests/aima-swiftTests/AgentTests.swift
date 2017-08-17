@@ -2,7 +2,7 @@ import XCTest
 @testable import aima_swift
 
 class AgentTests: XCTestCase {
-    func vacuumAgentTests() {
+    func simpleReflexAgentTests() {
         let states = [
             VacuumEnvironmentState(location: .a, status: .dirty),
             VacuumEnvironmentState(location: .b, status: .dirty),
@@ -14,9 +14,14 @@ class AgentTests: XCTestCase {
         let expectedActions: [VacuumAction] = [.suck, .suck, .turnRight, .turnLeft]
         XCTAssertEqual(actions, expectedActions)
     }
+    
+//    func modelBasedAgentTest() {
+//        
+//    }
 
 
     static var allTests = [
-        ("Vacuum Agent", vacuumAgentTests),
+        ("Simple Reflex Agent Agent", simpleReflexAgentTests),
+//        ("Model-Based Reflex Agent", modelBasedAgentTest)
     ]
 }

@@ -23,13 +23,14 @@ protocol Problem {
     func actions(given state: State) -> Set<Action>
  
     // Given a state and an action, returns the state resulting from taking the action
+    // This specifies the transition model.
     func result(of action: Action, given state: State) -> State
     
     // Returns true if the input state is the goal
-    func goalTest(state: State) -> Bool
+    func haveReachedGoal(state: State) -> Bool
     
     /*!
      Returns the cost to get to state2 from state1, given the action and the cost expended to get to state1
      */
-    func costOfPath(from state1: State, to state2: State, with action: Action, and costSoFar: CostType) -> CostType
+    func costOf(action: Action, from state1: State, to state2: State, given costSoFar: CostType) -> CostType
 }

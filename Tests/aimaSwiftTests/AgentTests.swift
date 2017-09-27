@@ -18,12 +18,12 @@ class AgentTests: XCTestCase {
             VacuumEnvironmentState(location: .b, status: .clean)
         ]
         
-        let actions = states.map { vacuumAgent.run(given: $0) as! VacuumAction }
-        let expectedActions: [VacuumAction] = [.suck, .suck, .turnRight, .turnLeft]
+        let actions = states.map { vacuumAgent.run(given: $0)!}
+        let expectedActions = [VacuumAction.suck.action, VacuumAction.suck.action, VacuumAction.turnRight.action, VacuumAction.turnLeft.action]
         XCTAssertEqual(actions, expectedActions)
     }
     
-    fileprivate func percept(_ location: Location, _ status: Status) -> VacuumEnvironmentState {
+    fileprivate func percept(_ location: Location, _ status: VacuumWorldStatus) -> VacuumEnvironmentState {
         return VacuumEnvironmentState(location: location, status: status)
     }
     
@@ -40,15 +40,17 @@ class AgentTests: XCTestCase {
             [percept(.a, .clean), percept(.a, .clean), percept(.a, .dirty)]
         ]
         
-        let expectedActions: [VacuumAction] =
-            [.turnRight, .suck, .turnLeft, .suck, .turnRight, .suck, .turnRight, .suck]
+        let expectedActions =
+            [VacuumAction.turnRight.action, VacuumAction.suck.action, VacuumAction.turnLeft.action,
+             VacuumAction.suck.action, VacuumAction.turnRight.action, VacuumAction.suck.action,
+             VacuumAction.turnRight.action, VacuumAction.suck.action]
         
-        var returnedActions = [VacuumAction]()
+        var returnedActions = [Action]()
         
         for history in perceptHistories {
-            var action: VacuumAction!
+            var action: Action!
             for percept in history {
-                action = tableDrivenVacuumAgent.run(given: percept) as! VacuumAction
+                action = tableDrivenVacuumAgent.run(given: percept)!
             }
             returnedActions.append(action)
         }

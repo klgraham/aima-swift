@@ -4,7 +4,19 @@
  "Agents interact with environments through sensors and actuators."
  */
 
-public protocol Action {}
+
+public struct Action: Hashable {
+    public var name: String
+    
+    public var hashValue: Int {
+        return name.hashValue
+    }
+    
+    public static func ==(lhs: Action, rhs: Action) -> Bool {
+        return lhs.name == rhs.name
+    }    
+}
+
 public protocol Percept {}
 public protocol Environment {}
 

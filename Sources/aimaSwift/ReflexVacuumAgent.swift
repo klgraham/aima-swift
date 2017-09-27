@@ -2,21 +2,25 @@
  See Section 2.4, Figure 2.8, reflex vacuum agent
  */
 
-public enum VacuumAction: Action {
+public enum VacuumAction: String {
     case suck, turnRight, turnLeft
+    
+    var action: Action {
+        return Action(name: self.rawValue)
+    }
 }
 
 public enum Location {
     case a, b
 }
 
-public enum Status {
+public enum VacuumWorldStatus {
     case clean, dirty
 }
 
 public struct VacuumEnvironmentState: Percept {
     let location: Location
-    let status: Status
+    let status: VacuumWorldStatus
 }
 
 extension VacuumEnvironmentState: Hashable {
@@ -32,11 +36,11 @@ extension VacuumEnvironmentState: Hashable {
 
 public let interpreter: (Percept) -> VacuumEnvironmentState = { p in return p as! VacuumEnvironmentState }
 
-public let vacuumRuleMatcher: (VacuumEnvironmentState) -> VacuumAction = { envState in
+public let vacuumRuleMatcher: (VacuumEnvironmentState) -> Action = { envState in
     switch (envState.location, envState.status) {
-    case (_, .dirty): return .suck
-    case (.a, .clean): return .turnRight
-    case (.b, .clean): return .turnLeft
+    case (_, .dirty): return VacuumAction.suck.action
+    case (.a, .clean): return VacuumAction.turnRight.action
+    case (.b, .clean): return VacuumAction.turnLeft.action
     }
 }
 

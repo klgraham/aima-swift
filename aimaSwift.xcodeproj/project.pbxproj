@@ -21,9 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		FD4BF3C21F4E3F500003294E /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4BF3C11F4E3F500003294E /* Problem.swift */; };
+		4247C7CA1F786524007F63F1 /* VacuumWorldProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4247C7C91F786524007F63F1 /* VacuumWorldProblem.swift */; };
+		4247C7CB1F7866F3007F63F1 /* SimpleProblemSolvingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDCAA41F4E105500E357DC /* SimpleProblemSolvingAgent.swift */; };
+		4247C7CC1F7866FC007F63F1 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4BF3C11F4E3F500003294E /* Problem.swift */; };
 		FD9D7E9A1F46223700BEF5C2 /* AgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7E991F46223700BEF5C2 /* AgentTests.swift */; };
-		FDFDCAA51F4E105500E357DC /* SimpleProblemSolvingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDCAA41F4E105500E357DC /* SimpleProblemSolvingAgent.swift */; };
 		OBJ_26 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_34 /* aimaSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "aimaSwift::aimaSwift::Product" /* aimaSwift.framework */; };
 		OBJ_41 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Agent.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4247C7C91F786524007F63F1 /* VacuumWorldProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacuumWorldProblem.swift; sourceTree = "<group>"; };
 		FD4BF3C11F4E3F500003294E /* Problem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		FD9D7E991F46223700BEF5C2 /* AgentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentTests.swift; sourceTree = "<group>"; };
 		FDFDCAA41F4E105500E357DC /* SimpleProblemSolvingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProblemSolvingAgent.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				OBJ_14 /* TableDrivenVacuumAgent.swift */,
 				FDFDCAA41F4E105500E357DC /* SimpleProblemSolvingAgent.swift */,
 				FD4BF3C11F4E3F500003294E /* Problem.swift */,
+				4247C7C91F786524007F63F1 /* VacuumWorldProblem.swift */,
 			);
 			name = aimaSwift;
 			path = Sources/aimaSwift;
@@ -228,8 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				FDFDCAA51F4E105500E357DC /* SimpleProblemSolvingAgent.swift in Sources */,
-				FD4BF3C21F4E3F500003294E /* Problem.swift in Sources */,
 				OBJ_26 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,8 +250,11 @@
 				OBJ_41 /* Agent.swift in Sources */,
 				OBJ_42 /* ModelBasedReflexAgent.swift in Sources */,
 				OBJ_43 /* ReflexVacuumAgent.swift in Sources */,
+				4247C7CA1F786524007F63F1 /* VacuumWorldProblem.swift in Sources */,
 				OBJ_44 /* SimpleReflexAgent.swift in Sources */,
 				OBJ_45 /* TableDrivenAgent.swift in Sources */,
+				4247C7CB1F7866F3007F63F1 /* SimpleProblemSolvingAgent.swift in Sources */,
+				4247C7CC1F7866FC007F63F1 /* Problem.swift in Sources */,
 				OBJ_46 /* TableDrivenVacuumAgent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
